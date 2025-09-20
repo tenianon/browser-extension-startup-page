@@ -1,0 +1,5 @@
+export { default as PhDesktop } from './PhDesktop.vue'
+export { default as PhMagnifyingGlass } from './PhMagnifyingGlass.vue'
+export { default as PhMoonStars } from './PhMoonStars.vue'
+export { default as PhSun } from './PhSun.vue'
+export { default as PhX } from './PhX.vue'

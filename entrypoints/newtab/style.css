@@ -1,0 +1,23 @@
+@import 'tailwindcss' source(none);
+
+@source not "../**/*.d.ts";
+@source not inline("{filter,transition}");
+
+@source "../../components/**/*.vue";
+@source "../../components/**/*.ts";
+@source "../../components/**/*.tsx";
+
+@source "../**/*.vue";
+@source "../**/*.ts";
+@source "../**/*.tsx";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --default-transition-duration: 300ms;
+}
+
+body {
+  font-size: unset;
+  @apply text-neutral-700 transition-[background-color,color] dark:text-neutral-400;
+}

@@ -1,0 +1,48 @@
+{
+	"name": "chromium-extension-startup-page",
+	"description": "manifest.json description",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "wxt",
+		"dev:firefox": "wxt -b firefox",
+		"build": "wxt build",
+		"build:firefox": "wxt build -b firefox",
+		"zip": "wxt zip",
+		"zip:firefox": "wxt zip -b firefox",
+		"compile": "vue-tsc --noEmit",
+		"postinstall": "wxt prepare",
+		"type-check": "vue-tsc --build",
+		"lint:check": "eslint entrypoints/ components/ modules/",
+		"lint:fix": "eslint entrypoints/ components/ modules/ --fix",
+		"format:check": "prettier --check entrypoints/ components/ modules/",
+		"format:fix": "prettier --write entrypoints/ components/ modules/"
+	},
+	"dependencies": {
+		"@vueuse/core": "^13.9.0",
+		"lodash-es": "^4.17.21",
+		"pinia": "^3.0.3",
+		"tailwind-merge": "^3.3.1",
+		"vue": "^3.5.21"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.13",
+		"@types/lodash-es": "^4.17.12",
+		"@vitejs/plugin-vue": "^6.0.1",
+		"@vitejs/plugin-vue-jsx": "^5.1.1",
+		"@vue/eslint-config-prettier": "^10.2.0",
+		"@vue/eslint-config-typescript": "^14.6.0",
+		"@vue/tsconfig": "^0.8.1",
+		"@wxt-dev/module-vue": "^1.0.2",
+		"eslint": "^9.35.0",
+		"eslint-plugin-perfectionist": "^4.15.0",
+		"eslint-plugin-vue": "^10.4.0",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.6.14",
+		"tailwindcss": "^4.1.13",
+		"typescript": "^5.9.2",
+		"vue-tsc": "^3.0.6",
+		"wxt": "^0.20.6"
+	}
+}

@@ -1,0 +1,6 @@
+{
+  "plugins": ["stylelint-container-query"],
+  "rules": {
+    "stylelint-container-query/use-container-query": true
+  }
+}
