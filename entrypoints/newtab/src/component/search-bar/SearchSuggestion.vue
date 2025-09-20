@@ -34,8 +34,9 @@ function scrollToActiveIndex() {
   })
 }
 
-const handleSearch = () => {
-  emit('search', false)
+const handleSearch = (e: MouseEvent) => {
+  e.preventDefault()
+  emit('search', e.metaKey || e.ctrlKey)
 }
 
 function windowKeyDown(e: KeyboardEvent) {
