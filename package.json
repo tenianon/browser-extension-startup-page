@@ -2,9 +2,9 @@
 	"name": "chromium-extension-startup-page",
 	"description": "manifest.json description",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
-  "license": "MIT",
+	"license": "MIT",
 	"scripts": {
 		"dev": "wxt",
 		"dev:firefox": "wxt -b firefox",
