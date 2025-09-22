@@ -14,7 +14,7 @@ const { id } = defineProps<SearchBoxProps>()
 
 const model = defineModel({ type: String })
 
-const emit = defineEmits<SearchBoxEmits>()
+const emits = defineEmits<SearchBoxEmits>()
 
 const { focusId } = useInjection(SearchBarInjectionKey)
 
@@ -30,36 +30,36 @@ const onTextareaCompositionStart = () => {
 
 const onTextareaCompositionEnd = () => {
   isComposing.value = false
-  emitInput()
+  emitsInput()
 }
 
 const onTextareaKeyDown = (e: KeyboardEvent) => {
   if (e.key === 'Enter' && !isComposing.value && !e.shiftKey) {
     e.preventDefault()
     const isActive = e.metaKey || e.ctrlKey
-    emitSearch(isActive)
+    emitsSearch(isActive)
   }
 }
 
 const handleClear = () => {
   model.value = ''
-  emitInput()
+  emitsInput()
 }
 
 const handleSearch = (e: MouseEvent) => {
-  emitSearch(e.metaKey || e.ctrlKey)
+  emitsSearch(e.metaKey || e.ctrlKey)
 }
 
 const onTextareaInput = throttle(() => {
-  emitInput()
+  emitsInput()
 }, 300)
 
-function emitInput() {
-  emit('input', model.value)
+function emitsInput() {
+  emits('input', model.value)
 }
 
-function emitSearch(active?: boolean) {
-  emit('search', active)
+function emitsSearch(active?: boolean) {
+  emits('search', active)
 }
 
 watch(focusId, (value) => {
@@ -90,8 +90,8 @@ watch(focusId, (value) => {
               @compositionend="onTextareaCompositionEnd"
               @keydown="onTextareaKeyDown"
               @input="onTextareaInput"
-              @focus="emit('focus')"
-              @blur="emit('blur')"
+              @focus="emits('focus')"
+              @blur="emits('blur')"
             />
             <div
               class="search-box-scrollbar pointer-events-none invisible m-0 size-full min-h-6 min-w-0 pr-[5px] align-bottom text-base break-words whitespace-pre-wrap"

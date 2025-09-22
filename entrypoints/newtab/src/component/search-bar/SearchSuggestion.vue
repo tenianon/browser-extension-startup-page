@@ -39,7 +39,7 @@ const handleSearch = (e: MouseEvent) => {
   emit('search', e.metaKey || e.ctrlKey)
 }
 
-function windowKeyDown(e: KeyboardEvent) {
+function windowKeydown(e: KeyboardEvent) {
   if (!(e.metaKey || e.ctrlKey) || isEmpty(suggestionList) || !canKeyDownToSelect.value) return
 
   if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
@@ -70,11 +70,11 @@ watch(
 )
 
 onMounted(() => {
-  window.addEventListener('keydown', windowKeyDown)
+  window.addEventListener('keydown', windowKeydown)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', windowKeyDown)
+  window.removeEventListener('keydown', windowKeydown)
 })
 </script>
 <template>

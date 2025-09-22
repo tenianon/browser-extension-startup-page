@@ -19,7 +19,7 @@ const idList = computed(() => searchEngineList?.map((item) => item.id))
 
 provide(SearchBarInjectionKey, { focusId })
 
-function windowKeyDown(e: KeyboardEvent) {
+function windowKeydown(e: KeyboardEvent) {
   if (e.shiftKey && (e.metaKey || e.ctrlKey)) {
     e.preventDefault()
     const currentIndex = idList.value.indexOf(focusId.value)
@@ -29,11 +29,11 @@ function windowKeyDown(e: KeyboardEvent) {
 }
 
 onMounted(() => {
-  window.addEventListener('keydown', windowKeyDown)
+  window.addEventListener('keydown', windowKeydown)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('keydown', windowKeyDown)
+  window.removeEventListener('keydown', windowKeydown)
 })
 </script>
 <template>

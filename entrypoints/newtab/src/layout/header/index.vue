@@ -8,6 +8,10 @@ import { PhMoonStars, PhDesktop, PhSun } from '@/components/icon'
 
 import { toRefsPreferencesStore } from '../../stores'
 
+const buttonRef = useTemplateRef<HTMLElement>('button')
+
+const popoverRef = useTemplateRef<HTMLElement>('popover')
+
 const themeModeList = [
   {
     icon: PhSun,
@@ -41,9 +45,6 @@ const popoverClass = computed(() =>
   ]),
 )
 
-const buttonRef = useTemplateRef<HTMLElement>('buttonRef')
-const popoverRef = useTemplateRef<HTMLElement>('popoverRef')
-
 onClickOutside(
   popoverRef,
   () => {
@@ -58,7 +59,7 @@ onClickOutside(
 <template>
   <div class="absolute top-0 right-0 p-4">
     <CompButton
-      ref="buttonRef"
+      ref="button"
       size="xl"
       @click="showPopover = !showPopover"
     >
@@ -66,7 +67,7 @@ onClickOutside(
     </CompButton>
 
     <div
-      ref="popoverRef"
+      ref="popover"
       :class="popoverClass"
     >
       <div

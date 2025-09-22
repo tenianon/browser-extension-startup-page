@@ -4,7 +4,7 @@ import { computed } from 'vue'
 
 import type { CompButtonProps } from './interface'
 
-const { size = 'md', ...buttonProps } = defineProps<CompButtonProps>()
+const { size = 'md', buttonProps } = defineProps<CompButtonProps>()
 
 const buttonClass = computed(() =>
   twMerge(
