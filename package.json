@@ -1,5 +1,5 @@
 {
-	"name": "chromium-extension-startup-page",
+	"name": "browser-extension-startup-page",
 	"description": "manifest.json description",
 	"private": true,
 	"version": "0.0.2",
